@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'adv_project.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['DATABASE_URL'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
