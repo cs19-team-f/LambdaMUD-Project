@@ -151,13 +151,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-<< << << < HEAD
 # whitenoise static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-== == == =
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
->>>>>> > 17ed707d773e5af55e950046d4403e885ed95814
+
 
 django_heroku.settings(locals())
