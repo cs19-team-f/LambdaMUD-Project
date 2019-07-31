@@ -37,7 +37,20 @@ r_secret = Room(title="Secret Passage",
 
 r_laboratory = Room(title="Laboratory", description="""Foul odors rise from buckets on the floor. Some of this large equipment must have been assembled pice by piece in here. What is that on the walls? """)
 
-rooms = [r_outside, r_foyer, r_narrow, r_treasure, r_overlook, r_greatroom]
+rooms = [
+    r_outside,
+    r_foyer,
+    r_narrow,
+    r_treasure,
+    r_overlook,
+    r_greatroom,
+    r_library,
+    r_hallway,
+    r_terrace,
+    r_basement,
+    r_secret,
+    r_laboratory
+]
 
 for i in rooms:
     i.save()
