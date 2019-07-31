@@ -1,3 +1,7 @@
+
+# creates all the rooms in the adventure world
+
+
 from django.contrib.auth.models import User
 from adventure.models import Player, Room
 
@@ -7,8 +11,8 @@ Room.objects.all().delete()
 r_outside = Room(title="Outside Cave Entrance",
                  description="North of you, the mansion looms forebodingly.")
 
-r_foyer = Room(title="Foyer", description="""Dim light filters in from the south. Dusty
-passages run north and east and west.""")
+r_foyer = Room(
+    title="Foyer", description="""Dim light filters in from the south. Dusty passages run north and east and west.""")
 
 r_overlook = Room(title="Grand Overlook", description="""A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
@@ -55,6 +59,21 @@ rooms = [
 for r in rooms:
     r.save()
 
+
+room_map = {
+    0: [[10, 10], {'n': 1}],
+    1: [[10, 11], {'n': 2, 's': 0, 'e': 3, 'w': 5}],
+    2: [[10, 12], {'s': 1, 'w': 6}],
+    3: [[11, 11], {'n': 4, 'w': 1}],
+    4: [[11, 12], {'s', 3}],
+    5: [[9, 11], {'n': 6, 's': 9, 'e': 1}],
+    6: [[9, 12], {'s': 5, 'e': 2, 'w': 7}],
+    7: [[8, 12], {'n': 8, 'e': 6}],
+    8: [[8, 13], {'s': 7}],
+    9: [[9, 10], {'n': 5, 'w': 10}],
+    10: [[8, 10], {'s': 11, 'e': 9}],
+    11: [[8, 9], {'n': 10}],
+}
 
 # Link rooms together
 r_outside.connectRooms(r_foyer, "n")
