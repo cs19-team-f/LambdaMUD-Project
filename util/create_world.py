@@ -30,7 +30,7 @@ r_treasure = Room(title="Treasure Chamber", description="""You've found the long
 chamber! Sadly, it has already been completely emptied by
 earlier adventurers. The only exit is to the south.""")
 
-r_basement = Room(title="Dark Basement", description="""You're going to need a torch in here. Crates and boxes stacked everywhere. In the thick dust on the floor, some very faint, old footprints lead off around the corner of some shelves.""")
+r_basement = Room(title="Dark Basement", description="""You're going to need a torch in here. Crates and boxes stacked everywhere. In the dust on the floor, some very faint, old footprints lead off around the corner of some shelves.""")
 
 r_secret = Room(title="Secret Passage",
                 description="""Very narrow but high-ceilinged passage that twists and turns. An acrid smell gets stronger as you walk.""")
