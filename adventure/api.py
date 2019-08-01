@@ -1,3 +1,7 @@
+
+# backend endpoints for the frontend to hit
+
+
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from pusher import Pusher
@@ -23,6 +27,15 @@ def initialize(request):
     room = player.room()
     players = room.playerNames(player_id)
     return JsonResponse({'uuid': uuid, 'name': player.user.username, 'title': room.title, 'description': room.description, 'players': players}, safe=True)
+
+
+@api_view(["GET"])
+def rooms(request):
+    rooms = Room.objects.all()
+    result = []
+    for room in rooms.values():
+        result.append(room)
+    return JsonResponse({'result': result})
 
 
 # @csrf_exempt
