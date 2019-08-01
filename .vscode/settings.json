@@ -1,8 +1,4 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#54143A",
-        "titleBar.activeBackground": "#751C51",
-        "titleBar.activeForeground": "#FEFCFD"
-    },
+    "workbench.colorCustomizations": {},
     "python.pythonPath": "/home/cam/.local/share/virtualenvs/LambdaMUD-Project-asIis7Pe/bin/python"
 }
