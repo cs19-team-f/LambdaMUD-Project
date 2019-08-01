@@ -155,6 +155,7 @@ for roomID in room_map:
 
 
 f.write(divs)
+f.close()
 
 
 # Link rooms together
