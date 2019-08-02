@@ -10,11 +10,27 @@ from decouple import config
 from django.contrib.auth.models import User
 from .models import *
 from rest_framework.decorators import api_view
+from django.shortcuts import render
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
+from django.template import Context, loader
 import json
+import os
 
 # instantiate pusher
 pusher = Pusher(app_id=config('PUSHER_APP_ID'), key=config(
     'PUSHER_KEY'), secret=config('PUSHER_SECRET'), cluster=config('PUSHER_CLUSTER'))
+
+
+# @csrf_exempt
+@api_view(["GET"])
+def getmap(request):
+    module_dir = os.path.dirname(__file__)  # get current directory
+    file_path = os.path.join(module_dir, 'map.html')
+    f = open(file_path, "r")
+    line = f.readline()
+    f.close()
+    return JsonResponse({"map": line})
 
 
 @csrf_exempt
